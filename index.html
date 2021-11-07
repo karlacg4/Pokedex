@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/app.js"></script>
+
+    <title>Pokédex</title>
+</head>
+
+
+<body>
+
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <a class="navbar-brand" >
+      <img class="brand-custom" src="/images/pokedex.png" width="160" height="50" alt="" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+         
+        </li>
+      </ul>
+      <form class="form-inline" method="POST" action="/">
+        <input id="pokeSearch" name="pokeSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </nav>
+<!--/.Navbar-->
+
+<br>
+
+<!-- buttons -->
+<div class="beside w80 cent">
+  <form action="/back" method="POST" >
+    <button type="submit" class="btns">
+      <div class=" btn" >
+        <i class="arrow left cent"></i>
+      </div>
+    </button>
+  </form>
+
+  <form action="/next" method="POST" >
+    <button type="submit" class="btns">
+      <div class=" btn" >
+        <i class="arrow right cent"></i>
+      </div>
+    </button>
+  </form>
+</div>
+
+<!-- card -->
+<div class="card mb-3 cent mt brdBl" style="max-width: 740px;">
+    <div class="row no-gutters pd10">
+      <div class="col-md-4 pokeimg">
+        <img src="<%=pokeImg %>"  class="card-img " alt="...">
+        <h5 class="card-title txtcent mt10">#<%=id%></h5>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title"><%= name.charAt(0).toUpperCase() + name.slice(1)%></h2>
+          <hr>
+          <p class="card-text">
+              <div class="box pd10">
+                <div class="izq">
+                    <p><b>Type:</b> </p>
+                    <% for (let i=0; i<types.length; i++) {%> 
+                      <% if (types[i]=="normal"|| types[i]=="steel"){ %> 
+                        <img src="/images/gray.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%= " "+types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %> 
+                      <% if (types[i]=="grass"|| types[i]=="bug"){ %> 
+                        <img src="/images/green.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%=" "+ types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %> 
+                      <% if (types[i]=="fire"|| types[i]=="fighting"){ %> 
+                        <img src="/images/red.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%=" "+ types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %> 
+                      <% if (types[i]=="water"|| types[i]=="ice"||types[i]=="flying"){ %> 
+                        <img src="/images/blue.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%=" "+ types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %> 
+                      <% if (types[i]=="poison"|| types[i]=="ghost"||types[i]=="dragon"){ %> 
+                        <img src="/images/purp.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%=" "+ types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %>
+                      <% if (types[i]=="ground"|| types[i]=="rock"||types[i]=="electric"){ %> 
+                        <img src="/images/ylw.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%=" "+ types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %>
+                      <% if (types[i]=="psychic"|| types[i]=="fairy"){ %> 
+                        <img src="/images/pink.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%=" "+ types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %> 
+                      <% if (types[i]=="dark"){ %> 
+                        <img src="/images/dark.png" style="width: 13px; height: 13px;" class="card-img " alt="..."><%=" "+ types[i].charAt(0).toUpperCase() + types[i].slice(1) %>
+                      <% } %> 
+                      
+                    <% } %> 
+                    <br>
+                    <br>
+                    <p><b>Experience</b> </p>
+                    <p><%=xp%></p>
+                  </div>
+                  <div class="der">
+                    <p><b>Weight:</b> </p>
+                    <p><%=weight/10%> kg</p>
+                    <p><b>Height:</b> </p>
+                    <p><%=height/10%> m</p>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- card 2 -->
+  <div class="card cent brdYl" style="max-width: 740px";>
+    <div class="card-body">
+      <div class="iz">
+        <p><b>Abilities:</b> </p>
+        <hr>
+        <% for (let i=0; i<abilities.length; i++) {%> 
+          <div class="ml30 izq">
+            <p><img src="/images/favicon-32x32.png" style="width: 10px; height: 10px;" class="card-img " alt="..."> <%=  abilities[i].charAt(0).toUpperCase() + abilities[i].slice(1) %> </p>
+          </div>
+        <% } %>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- card 3 -->
+  <div class="card cent mt10 brdRd mb20" style="max-width: 740px";>
+    <div class="card-body">
+      <div class="iz">
+        <p><b>Moves:</b> </p>
+        <hr>
+        <% for (let i=0; i<moves.length; i++) {%> 
+          <div class="izq"> 
+            <p><img src="/images/favicon-32x32.png" style="width: 10px; height: 10px;" class="card-img " alt="..."> <%=moves[i].charAt(0).toUpperCase() + moves[i].slice(1) %> </p>
+          </div>
+        <% } %>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+</body>
+</html>

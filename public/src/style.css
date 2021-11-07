@@ -1,0 +1,177 @@
+.navbar-custom {
+    background-color: #D41E11;
+}
+
+
+/* change the brand and text color */
+
+.navbar-custom .navbar-brand {
+    color: #fafafa !important;
+}
+
+
+/* change the link color */
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #fafafa !important;
+}
+
+
+/* change the color of active or hovered links */
+
+.navbar-custom .nav-item.active .nav-link {
+    color: #E3B668 !important;
+}
+
+.navbar-custom .nav-item:hover .nav-link {
+    color: #CFB88F !important;
+}
+
+.pokecard{
+    
+    width:25rem;;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px !important;
+}
+.pokeimg{
+    background-color: #D7D4CE;
+    /* margin: auto;
+    width: 25rem;
+    height: 18.75rem; */
+    border-radius: 10px !important;
+
+}
+
+.pokemon{
+    width: 300px;
+    height: 300px;
+}
+
+.pd30{
+    padding:30px;
+}
+
+.cent{
+    margin:auto;
+}
+
+.txtcent{
+    text-align: center;
+}
+.izq{
+    width: 199px;
+    float:left;
+    margin-left: 30px;
+}
+.ml30{
+    margin-left: 30px;
+}
+
+.txtlft{
+    text-align: left;
+}
+.fleft{
+    float:left;
+}
+/* margin */
+.mr{
+    margin-left: 200px;
+}
+
+.ml20{
+    margin-left: 4rem;
+}
+
+.mt{
+    margin-top: 35px;
+}
+
+.mt10{
+    margin-top: 15px;
+}
+
+.mb20{
+    margin-bottom: 50px;
+}
+
+
+.box{
+    
+    border-radius: 20px;
+    background-color: #30a7d7;
+    color: white;
+}
+
+.pd10{
+    padding: 10px;
+}
+
+.w80{
+    width: 30%;
+    
+}
+
+/*Arrows*/
+.arrow {
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 5px;
+    /* margin-top:17px;
+    margin-left: 17px; */
+  }
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.btns{
+    background-color: 	#F8D030;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.btns:hover {
+    background-color: #D6B329;
+  }
+
+button{
+    border: none;
+}
+
+.beside{
+    justify-content: space-between;
+    display: flex;
+
+}
+
+
+ 
+
+  .brdBl{
+      border: 4px solid #0f4995 !important;
+  }
+
+  .brdYl{
+    border: 4px solid #D6B329 !important;
+  }
+
+  .brdRd{
+    border: 4px solid  #D41E11 !important;
+  }
+
+  body{
+      background-image: url("../images/circles-light.png");
+      background-attachment: fixed;
+      font-family: 'Fira Code';
+  }
+
+ 
